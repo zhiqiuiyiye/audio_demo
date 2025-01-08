@@ -3,44 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audio Table</title>
+    <title>Audio Evaluation Table</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
             background-color: #f9f9f9;
+            margin: 20px;
+            line-height: 1.6;
         }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
+            margin-bottom: 20px;
         }
-        table th, table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
+
+        td {
+            padding: 10px;
+            vertical-align: middle;
         }
-        table th {
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        .highlight-yellow {
-            background-color: #fff9c4;
-        }
-        .highlight-green {
-            background-color: #e8f5e9;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .score {
-            text-align: center;
+
+        .section-title {
             font-weight: bold;
-            color: #d32f2f;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 10px;
+            font-size: 1.2em;
+            border-bottom: 2px solid #ccc;
+        }
+
+        .audio-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        audio {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .remarks {
+            color: #555;
+            font-style: italic;
         }
     </style>
 </head>
@@ -48,53 +59,142 @@
 
     <h1>Audio Evaluation Table</h1>
 
+    <!-- 表格部分 -->
     <table>
-        <thead>
-            <tr>
-                <th class="highlight-yellow">Text</th>
-                <th>Audio</th>
-                <th>Score</th>
-                <th>Remarks</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Dokumen Anda masih belum lengkap. Segera lengkapi dokumen agar kami bisa memproses pengajuan Anda. Terimakasih</td>
-                <td><a href="assets/audio/test_1.wav" target="_blank">test_1.wav</a></td>
-                <td class="score">4</td>
-                <td>tone on word "lengkap" sounds unnatural</td>
-            </tr>
-            <tr>
-                <td>Buka aplikasi Gopay Merchant Anda dan cairkan sekarang ya!</td>
-                <td><a href="assets/audio/test_2.wav" target="_blank">test_2.wav</a></td>
-                <td class="score">4</td>
-                <td>tone on word "buka" sounds unnatural</td>
-            </tr>
-            <tr>
-                <td>Halo, selamat pagi! Saya Indira dari Indosat, apakah saat ini saya sedang berbicara dengan Bapak Hariyanto Wijaya?</td>
-                <td><a href="assets/audio/test_4.wav" target="_blank">test_4.wav</a></td>
-                <td class="score">4.5</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>Halo, saya Astari dari Modal Toko.</td>
-                <td><a href="assets/audio/test_6.wav" target="_blank">test_6.wav</a></td>
-                <td class="score">4</td>
-                <td>tone on word "modal toko" sounds unnatural</td>
-            </tr>
-            <tr>
-                <td>Promo ini cukup terbatas, jadi apa boleh disimulasikan dulu?</td>
-                <td><a href="assets/audio/test_7.wav" target="_blank">test_7.wav</a></td>
-                <td class="score">4.5</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>Baik, info detail terkait penawaran akan dihubungi melalui WhatsApp atau telepon ya.</td>
-                <td><a href="assets/audio/test_8.wav" target="_blank">test_8.wav</a></td>
-                <td class="score">4.5</td>
-                <td>-</td>
-            </tr>
-        </tbody>
+        <!-- One-Shot 部分 -->
+        <tr>
+            <td colspan="6" class="section-title">One-Shot</td>
+        </tr>
+        <tr>
+            <td><b>Language</b></td>
+            <td><b>Reference Audio</b></td>
+            <td><b>TTS Audio 1</b></td>
+            <td><b>Reference Audio 2</b></td>
+            <td><b>TTS Audio 2</b></td>
+            <td><b>Remarks</b></td>
+        </tr>
+        <tr>
+            <td>Indonesian</td>
+            <td class="audio-container">
+                <audio controls>
+                    <source src="audio_asset/spk1_ref1.wav" type="audio/wav">
+                </audio>
+                <audio controls>
+                    <source src="audio_asset/spk2_ref1.wav" type="audio/wav">
+                </audio>
+                <audio controls>
+                    <source src="audio_asset/spk3_ref1.wav" type="audio/wav">
+                </audio>
+            </td>
+            <td class="audio-container">
+                <audio controls>
+                    <source src="audio_asset/spk1_tts1.wav" type="audio/wav">
+                </audio>
+                <audio controls>
+                    <source src="audio_asset/spk2_tts1.wav" type="audio/wav">
+                </audio>
+                <audio controls>
+                    <source src="audio_asset/spk3_tts1.wav" type="audio/wav">
+                </audio>
+            </td>
+            <td class="audio-container">
+                <audio controls>
+                    <source src="audio_asset/spk1_ref2.wav" type="audio/wav">
+                </audio>
+                <audio controls>
+                    <source src="audio_asset/spk2_ref2.wav" type="audio/wav">
+                </audio>
+                <audio controls>
+                    <source src="audio_asset/spk3_ref2.wav" type="audio/wav">
+                </audio>
+            </td>
+            <td class="audio-container">
+                <audio controls>
+                    <source src="audio_asset/spk1_tts2.wav" type="audio/wav">
+                </audio>
+                <audio controls>
+                    <source src="audio_asset/spk2_tts2.wav" type="audio/wav">
+                </audio>
+                <audio controls>
+                    <source src="audio_asset/spk3_tts2.wav" type="audio/wav">
+                </audio>
+            </td>
+            <td class="remarks">Indonesian test remarks</td>
+        </tr>
+
+        <!-- Zero-Shot 部分 -->
+        <tr>
+            <td colspan="6" class="section-title">Zero-Shot</td>
+        </tr>
+        <tr>
+            <td>English</td>
+            <td class="audio-container">
+                <audio controls>
+                    <source src="audio_asset/spk4_ref1.wav" type="audio/wav">
+                </audio>
+                <audio controls>
+                    <source src="audio_asset/spk5_ref1.wav" type="audio/wav">
+                </audio>
+            </td>
+            <td class="audio-container">
+                <audio controls>
+                    <source src="audio_asset/spk4_tts1.wav" type="audio/wav">
+                </audio>
+                <audio controls>
+                    <source src="audio_asset/spk5_tts1.wav" type="audio/wav">
+                </audio>
+            </td>
+            <td class="audio-container">
+                <audio controls>
+                    <source src="audio_asset/spk4_tts2.wav" type="audio/wav">
+                </audio>
+                <audio controls>
+                    <source src="audio_asset/spk5_tts2.wav" type="audio/wav">
+                </audio>
+            </td>
+            <td class="audio-container">
+                <audio controls>
+                    <source src="audio_asset/spk4_tts3.wav" type="audio/wav">
+                </audio>
+                <audio controls>
+                    <source src="audio_asset/spk5_tts3.wav" type="audio/wav">
+                </audio>
+            </td>
+            <td class="remarks">English test remarks</td>
+        </tr>
+
+        <!-- Cross-Lingual 部分 -->
+        <tr>
+            <td colspan="6" class="section-title">Cross-Lingual</td>
+        </tr>
+        <tr>
+            <td>Taglish</td>
+            <td class="audio-container">
+                <audio controls>
+                    <source src="audio_asset/spk9_ref1.wav" type="audio/wav">
+                </audio>
+                <audio controls>
+                    <source src="audio_asset/spk10_ref1.wav" type="audio/wav">
+                </audio>
+                <audio controls>
+                    <source src="audio_asset/spk11_ref1.wav" type="audio/wav">
+                </audio>
+            </td>
+            <td class="audio-container">
+                <audio controls>
+                    <source src="audio_asset/spk9_tts1.wav" type="audio/wav">
+                </audio>
+                <audio controls>
+                    <source src="audio_asset/spk10_tts1.wav" type="audio/wav">
+                </audio>
+                <audio controls>
+                    <source src="audio_asset/spk11_tts1.wav" type="audio/wav">
+                </audio>
+            </td>
+            <td></td>
+            <td></td>
+            <td class="remarks">Cross-lingual remarks</td>
+        </tr>
     </table>
 
 </body>
