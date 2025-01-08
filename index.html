@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TTS Audio Table</title>
+    <title>GPT_TTS_ml Audio demo</title>
     <style>
         table {
             width: 100%;
@@ -26,11 +26,11 @@
     </style>
 </head>
 <body>
-    <h1>TTS Audio Table</h1>
+    <h1>GPT_TTS_ml Audio demo</h1>
     <table>
         <thead>
             <tr>
-                <th>Scenario</th>
+                <th>One shot</th>
                 <th>Reference Audio (Excited)</th>
                 <th>TTS Audio 1</th>
                 <th>Reference Audio (Calm)</th>
@@ -86,6 +86,36 @@
                 <td><audio controls src="audio_asset/spk3_ref4.wav"></audio></td>
                 <td><audio controls src="audio_asset/spk3_tts4.wav"></audio></td>
             </tr>
+        </tbody>
+    </table>
+    <h1>Zero shot</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>english</th>
+                <th>Reference Audio</th>
+                <th>TTS Audio 1</th>
+                <th></th>
+                <th>TTS Audio 2</th>
+                <th></th>
+                <th>TTS Audio 3</th>
+                <th></th>
+                <th>TTS Audio 4</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Indonesian</td>
+                <td></td>
+                <td>Dokumen Anda masih belum lengkap. Segera lengkapi dokumen agar kami bisa memproses pengajuan Anda. Terimakasih</td>
+                <td></td>
+                <td>Baik, terima kasih atas konfirmasinya. Kami akan menutup laporan ini.</td>
+                <td></td>
+                <td>Apa boleh saya minta waktu sebentar untuk verifikasi dan penjelasan singkat polisnya?</td>
+                <td></td>
+                <td>Silahkan kirim beberapa dokumen tambahan sekarang agar Anda bisa mengajukan pinjaman lebih banyak!</td>
+            </tr>
+
             <tr>
                 <td>English - Speaker 4</td>
                 <td><audio controls src="audio_asset/spk4_ref1.wav"></audio></td>
