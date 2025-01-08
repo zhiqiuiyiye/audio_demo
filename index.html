@@ -9,7 +9,6 @@
             font-family: Arial, sans-serif;
             background-color: #f9f9f9;
             margin: 20px;
-            line-height: 1.6;
         }
 
         h1 {
@@ -24,9 +23,14 @@
             margin-bottom: 20px;
         }
 
-        td {
+        td, th {
             padding: 10px;
-            vertical-align: middle;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #ffee58;
+            text-align: left;
         }
 
         .section-title {
@@ -41,7 +45,7 @@
         .audio-container {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 5px;
         }
 
         audio {
@@ -61,20 +65,22 @@
 
     <!-- 表格部分 -->
     <table>
-        <!-- One-Shot 部分 -->
+        <!-- 表头 -->
         <tr>
-            <td colspan="6" class="section-title">One-Shot</td>
+            <th>one-shot</th>
+            <th>reference_audio(excited)</th>
+            <th>TTS_audio1</th>
+            <th>reference_audio(calm)</th>
+            <th>TTS_audio2</th>
+            <th>reference_audio(friendly)</th>
+            <th>TTS_audio3</th>
+            <th>reference_audio(persuasive)</th>
+            <th>TTS_audio4</th>
         </tr>
+
+        <!-- 第一行数据 -->
         <tr>
-            <td><b>Language</b></td>
-            <td><b>Reference Audio</b></td>
-            <td><b>TTS Audio 1</b></td>
-            <td><b>Reference Audio 2</b></td>
-            <td><b>TTS Audio 2</b></td>
-            <td><b>Remarks</b></td>
-        </tr>
-        <tr>
-            <td>Indonesian</td>
+            <td>indonesian</td>
             <td class="audio-container">
                 <audio controls>
                     <source src="audio_asset/spk1_ref1.wav" type="audio/wav">
@@ -119,82 +125,53 @@
                     <source src="audio_asset/spk3_tts2.wav" type="audio/wav">
                 </audio>
             </td>
-            <td class="remarks">Indonesian test remarks</td>
+            <td class="audio-container">
+                <audio controls>
+                    <source src="audio_asset/spk1_ref3.wav" type="audio/wav">
+                </audio>
+                <audio controls>
+                    <source src="audio_asset/spk2_ref3.wav" type="audio/wav">
+                </audio>
+                <audio controls>
+                    <source src="audio_asset/spk3_ref3.wav" type="audio/wav">
+                </audio>
+            </td>
+            <td class="audio-container">
+                <audio controls>
+                    <source src="audio_asset/spk1_tts3.wav" type="audio/wav">
+                </audio>
+                <audio controls>
+                    <source src="audio_asset/spk2_tts3.wav" type="audio/wav">
+                </audio>
+                <audio controls>
+                    <source src="audio_asset/spk3_tts3.wav" type="audio/wav">
+                </audio>
+            </td>
+            <td class="audio-container">
+                <audio controls>
+                    <source src="audio_asset/spk1_ref4.wav" type="audio/wav">
+                </audio>
+                <audio controls>
+                    <source src="audio_asset/spk2_ref4.wav" type="audio/wav">
+                </audio>
+                <audio controls>
+                    <source src="audio_asset/spk3_ref4.wav" type="audio/wav">
+                </audio>
+            </td>
+            <td class="audio-container">
+                <audio controls>
+                    <source src="audio_asset/spk1_tts4.wav" type="audio/wav">
+                </audio>
+                <audio controls>
+                    <source src="audio_asset/spk2_tts4.wav" type="audio/wav">
+                </audio>
+                <audio controls>
+                    <source src="audio_asset/spk3_tts4.wav" type="audio/wav">
+                </audio>
+            </td>
         </tr>
 
-        <!-- Zero-Shot 部分 -->
-        <tr>
-            <td colspan="6" class="section-title">Zero-Shot</td>
-        </tr>
-        <tr>
-            <td>English</td>
-            <td class="audio-container">
-                <audio controls>
-                    <source src="audio_asset/spk4_ref1.wav" type="audio/wav">
-                </audio>
-                <audio controls>
-                    <source src="audio_asset/spk5_ref1.wav" type="audio/wav">
-                </audio>
-            </td>
-            <td class="audio-container">
-                <audio controls>
-                    <source src="audio_asset/spk4_tts1.wav" type="audio/wav">
-                </audio>
-                <audio controls>
-                    <source src="audio_asset/spk5_tts1.wav" type="audio/wav">
-                </audio>
-            </td>
-            <td class="audio-container">
-                <audio controls>
-                    <source src="audio_asset/spk4_tts2.wav" type="audio/wav">
-                </audio>
-                <audio controls>
-                    <source src="audio_asset/spk5_tts2.wav" type="audio/wav">
-                </audio>
-            </td>
-            <td class="audio-container">
-                <audio controls>
-                    <source src="audio_asset/spk4_tts3.wav" type="audio/wav">
-                </audio>
-                <audio controls>
-                    <source src="audio_asset/spk5_tts3.wav" type="audio/wav">
-                </audio>
-            </td>
-            <td class="remarks">English test remarks</td>
-        </tr>
-
-        <!-- Cross-Lingual 部分 -->
-        <tr>
-            <td colspan="6" class="section-title">Cross-Lingual</td>
-        </tr>
-        <tr>
-            <td>Taglish</td>
-            <td class="audio-container">
-                <audio controls>
-                    <source src="audio_asset/spk9_ref1.wav" type="audio/wav">
-                </audio>
-                <audio controls>
-                    <source src="audio_asset/spk10_ref1.wav" type="audio/wav">
-                </audio>
-                <audio controls>
-                    <source src="audio_asset/spk11_ref1.wav" type="audio/wav">
-                </audio>
-            </td>
-            <td class="audio-container">
-                <audio controls>
-                    <source src="audio_asset/spk9_tts1.wav" type="audio/wav">
-                </audio>
-                <audio controls>
-                    <source src="audio_asset/spk10_tts1.wav" type="audio/wav">
-                </audio>
-                <audio controls>
-                    <source src="audio_asset/spk11_tts1.wav" type="audio/wav">
-                </audio>
-            </td>
-            <td></td>
-            <td></td>
-            <td class="remarks">Cross-lingual remarks</td>
-        </tr>
+        <!-- 其余行数据可以继续补充 -->
     </table>
 
 </body>
