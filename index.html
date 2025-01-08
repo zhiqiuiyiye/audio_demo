@@ -28,7 +28,8 @@
 </head>
 <body>
     <h1>GPT_TTS_ml Audio demo</h1>
-    <tr>提取speech的语义特征后进行量化，使用GPT预测合成文本对应的语义token，经过flow模块预测acoustic特征，使用vocoder解码出音频</tr>
+    <tr>提取speech的语义特征后进行量化，使用GPT预测合成文本对应的语义token，经过flow模块预测acoustic特征，使用vocoder解码出音频。使用了印尼语，泰语，英文，taglish(菲律宾英文），西班牙语进行训练，每个语种的数据在1w小时左右</tr>
+    <br><br> <!-- 添加两行空行 -->
     <table>
         <thead>
             <tr>
@@ -225,6 +226,10 @@
 
     <br><br> <!-- 添加两行空行 -->
     <h1>bert+vits2 联合训练 </h1>
+    <tr>参考bert_vits2开源项目，进行了改进：源项目使用bert提取语音特征后座位音频text_encoder的额外输入，并未充分利用bert的能力。改进的点是，将bert加入到整个TTS模型中一起训练，需要解决的是
+        bert的token与TTS输入音素的对齐问题，直接使用attention模块训练困难，因此结合原始word对应的subword和音素的个数，使用pooling等进行强制对齐，训练时先固定bert参数，后期随着一起finetune
+    </tr>
+    <br><br> <!-- 添加两行空行 -->
     <table>
         <thead>
             <tr>
